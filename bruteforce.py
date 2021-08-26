@@ -41,11 +41,11 @@ for n in range(0, len(data2) + 1):
 # Storage of each combination if cost less or equal than 500€
 for comb in all_comb:
     for small_comb in comb:
-        sum_coast = 0
+        sum_cost = 0
         all_nb_comb += 1
         for element in small_comb:
-            sum_coast += int(element['price'])
-        if sum_coast <= WALLET:
+            sum_cost += int(element['price'])
+        if sum_cost <= WALLET:
             good_comb.append(small_comb)
 
 # Display results
