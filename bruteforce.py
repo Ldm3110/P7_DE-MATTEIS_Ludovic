@@ -1,5 +1,4 @@
 # Importing utilities
-import time
 from itertools import combinations
 import csv
 
@@ -9,7 +8,6 @@ WALLET = 500
 
 
 # Open the csv file with 'csv.DictReader'
-start = time.time()
 data2 = []
 all_comb = []
 good_comb = []
@@ -48,11 +46,13 @@ for comb in all_comb:
         if sum_cost <= WALLET:
             good_comb.append(small_comb)
 
+'''
 # Display results
 good_nb_comb = len(good_comb)
 print(f"Total combinaisons : {all_nb_comb}")
 print(f"Combinaisons valides : {good_nb_comb}")
 print(f"Soit {(good_nb_comb / all_nb_comb) * 100} % de combinaisons <= 500€")
+'''
 
 # Calculation of the 2-year profit for each combination and display of the best combination
 for comb in good_comb:
@@ -75,7 +75,3 @@ for elem in max_action:
 print("\nLe coût de cette combinaison est de {:0.2f}€".format(sum_coast_max_action))
 print("Le bénéfice de cette combinaison est de {:0.2f}€ sur 2 ans".format(max_benefit))
 
-# Display program execution time
-end = time.time()
-elapsed = end - start
-print("\nProgramme éxécuté en {:0.2f}s".format(elapsed))
