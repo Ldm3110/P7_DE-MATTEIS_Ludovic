@@ -33,9 +33,9 @@ $ pip install -r requirements.txt
 
 - Pour le programme de force brute 
 
-`$ time python3 bruteforce.py`
+`$ time python bruteforce.py`
 
 - Pour le programme optimisé 
 
-`$ time python3 optimized.py`
+`$ time python optimized.py`
 
