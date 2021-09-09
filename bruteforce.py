@@ -59,7 +59,7 @@ for comb in good_comb:
     sum_benefit = 0
     sum_coast = 0
     for action in comb:
-        sum_benefit += int(action['price']) * (int(action['benefit']) / 100)
+        sum_benefit += int(action['price']) * (int(action['profit']) / 100)
         sum_coast += int(action['price'])
         if sum_benefit > max_benefit:
             max_benefit = sum_benefit
@@ -71,7 +71,7 @@ for comb in good_comb:
 print("\nAprès analyse, la meilleure combinaison est :")
 for elem in max_action:
     for action in elem:
-        print(f"- {action['Name']}")
+        print(f"- {action['name']}")
 print("\nLe coût de cette combinaison est de {:0.2f}€".format(sum_coast_max_action))
 print("Le bénéfice de cette combinaison est de {:0.2f}€ sur 2 ans".format(max_benefit))
 
