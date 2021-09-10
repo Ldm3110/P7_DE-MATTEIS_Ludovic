@@ -39,3 +39,13 @@ $ pip install -r requirements.txt
 
 `$ time python optimized.py`
 
+### Comparaison avec les datasets de Sienna (supplément)
+
+Afin de pouvoir consulter l'éxécution et les résultats de l'algorithme "optimized.py" avec les différents dataset 
+de Sienna, veuillez remplacer le mot "source" à la ligne 11 du programme par "dataset1" ou "dataset2"
+
+Exemple:
+
+`data = pd.read_csv(source)`
+remplacé par 
+`data = pd.read_csv(dataset1)`
