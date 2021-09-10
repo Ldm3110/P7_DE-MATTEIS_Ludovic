@@ -6,7 +6,6 @@ import csv
 source = './csv/BruteForce.csv'
 WALLET = 500
 
-
 # Open the csv file with 'csv.DictReader'
 data2 = []
 all_comb = []
@@ -16,16 +15,6 @@ with open(source, newline='') as csv_file:
     for elem in reader:
         data2.append(elem)
 
-'''     
-# Afficher toutes les actions suite à l'extraction du csv
-for action in data2:
-    print(f"{action['Name']} : coût {action['price']} € - {action['benefit']} %")
-
-# Calculer le bénéfice par action
-for action in data2:
-    benefit = int(action['price']) * (int(action['benefit']) / 100)
-    print(f"Bénéfice de {action['Name']} = {benefit} €")
-'''
 # Declaration of variables useful for execution
 all_nb_comb = 0  # allows you to complete all combinations
 max_benefit = 0  # saves the benefit of the best combination
@@ -45,14 +34,6 @@ for comb in all_comb:
             sum_cost += int(element['price'])
         if sum_cost <= WALLET:
             good_comb.append(small_comb)
-
-'''
-# Display results
-good_nb_comb = len(good_comb)
-print(f"Total combinaisons : {all_nb_comb}")
-print(f"Combinaisons valides : {good_nb_comb}")
-print(f"Soit {(good_nb_comb / all_nb_comb) * 100} % de combinaisons <= 500€")
-'''
 
 # Calculation of the 2-year profit for each combination and display of the best combination
 for comb in good_comb:
@@ -75,3 +56,20 @@ for elem in max_action:
 print("\nLe coût de cette combinaison est de {:0.2f}€".format(sum_coast_max_action))
 print("Le bénéfice de cette combinaison est de {:0.2f}€ sur 2 ans".format(max_benefit))
 
+'''
+# Display results
+good_nb_comb = len(good_comb)
+print(f"Total combinaisons : {all_nb_comb}")
+print(f"Combinaisons valides : {good_nb_comb}")
+print(f"Soit {(good_nb_comb / all_nb_comb) * 100} % de combinaisons <= 500€")
+'''
+'''     
+# Afficher toutes les actions suite à l'extraction du csv
+for action in data2:
+    print(f"{action['Name']} : coût {action['price']} € - {action['benefit']} %")
+
+# Calculer le bénéfice par action
+for action in data2:
+    benefit = int(action['price']) * (int(action['benefit']) / 100)
+    print(f"Bénéfice de {action['Name']} = {benefit} €")
+'''

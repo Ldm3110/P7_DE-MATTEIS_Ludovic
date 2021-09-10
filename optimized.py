@@ -1,5 +1,3 @@
-import time
-
 import pandas as pd
 
 source = './csv/BruteForce.csv'
